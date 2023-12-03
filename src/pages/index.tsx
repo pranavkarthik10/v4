@@ -45,7 +45,7 @@ const ACTIONS: Array<NavigationItem> = [
 ];
 export default function HomePage(): JSX.Element {
 	const options = ['builder', 'entrepreneur', 'visionary'];
-	const [currentIndex, setCurrentIndex] = useState(0);
+	// const [currentIndex, setCurrentIndex] = useState(0);
 	const [isFirstRender, setIsFirstRender] = useState(true);
 	const today = new Date();
 	const birthday = new Date('2005-09-10');
@@ -82,7 +82,7 @@ export default function HomePage(): JSX.Element {
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
 						I&apos;m Pranav, <br className="hidden sm:block" />a{' '}
 						<Pill.Standard className={`mt-4 ${isFirstRender ? 'animate' : ''}`}>
-							{options[currentIndex]}
+							{options[0]}
 						</Pill.Standard>
 					</Animate>
 

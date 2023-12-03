@@ -37,7 +37,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): 
             <div className="flex flex-grow min-h-screen pt-16 pb-12">
                 <div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
                     <h1 className="flex flex-wrap justify-between mb-2 text-gray-500 dark:text-white text-xl tracking-tight font-bold">
-                        <span>Places where I've been featured</span>
+                        <span>Places where I&apos;ve been featured</span>
                     </h1>
                     <ul className="-mb-8" role="list">
                         {timeline.map((event, index) => (

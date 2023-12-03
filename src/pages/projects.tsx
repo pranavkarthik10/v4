@@ -1,4 +1,4 @@
-import { fetchProjects } from '~/lib/projects';
+// import { fetchProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
 import { Animate, List } from '~/components';
 import { ListActionType } from '~/types';
@@ -13,7 +13,7 @@ interface ProjectProps {
 
 export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 	const { default: projects } = await import('~/data/projects.json');
-	const stringifiedProjects = (projects as Array<Project>)
+	// const stringifiedProjects = (projects as Array<Project>)
 	return {
 		props: {
 			stringifiedProjects: JSON.stringify(projects),

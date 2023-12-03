@@ -1,7 +1,7 @@
 import emojiRegex from 'emoji-regex';
 import { log } from 'next-axiom';
 
-import type { GitHubRepos, Project, ProjectPost } from '~/types';
+import type { GitHubRepos, Project } from '~/types';
 
 /**
  * Fetch Projects
@@ -36,8 +36,8 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 	const json = (await response.json()) as GitHubRepos;
 
-	const { default: rawProjectPosts } = await import('~/data/projects.json');
-	const projectPosts = rawProjectPosts as Array<ProjectPost>;
+	// const { default: rawProjectPosts } = await import('~/data/projects.json');
+	// const projectPosts = rawProjectPosts as Array<ProjectPost>;
 
 	const projects: Array<Project> = json
 		.map((repo) => {
@@ -51,11 +51,11 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 			const description = trimmedDescription.join(' ');
 
 			// Check if there is a matching blog post to attach
-			const repoPost =
-				projectPosts.length > 0 &&
-				projectPosts.find(
-					(post) => post.repository.toLowerCase() === repo.full_name.toLowerCase(),
-				);
+			// const repoPost =
+			// 	projectPosts.length > 0 &&
+			// 	projectPosts.find(
+			// 		(post) => post.repository.toLowerCase() === repo.full_name.toLowerCase(),
+			// 	);
 
 			return {
 				description,
@@ -68,7 +68,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 				})(),
 				homepage: repo.homepage ?? undefined,
 				name: repo.name,
-				post: repoPost ? `/blog/${repoPost.post}` : undefined,
+				post: undefined,
 				template: false,
 				url: repo.html_url.toLowerCase(),
 			} as Project;

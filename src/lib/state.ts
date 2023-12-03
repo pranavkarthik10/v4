@@ -1,6 +1,6 @@
-import { extend, hookstate, useHookstate } from '@hookstate/core';
+import { hookstate, useHookstate } from '@hookstate/core';
 import { Persistence } from '@hookstate/persistence';
-import { localstored } from '@hookstate/localstored';
+// import { localstored } from '@hookstate/localstored';
 import { useEffect } from 'react';
 import { useMedia } from 'react-use';
 
@@ -20,13 +20,10 @@ export function usePersistantState(): State<Settings> {
 	const noMotionPreference = useMedia('(prefers-rweduced-motion: no-preference)', true);
 
 	const persistance = Persistence(STATE_KEY);
-	const state = useHookstate<Settings>(DEFAULT_STATE,
-		localstored({
-			key: STATE_KEY
-		}));
+	const state = useHookstate<Settings>(DEFAULT_STATE);
 
 	useEffect(() => {
-		// extend(state, persistance);
+		// extenwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwd(state, persistance);
 		// @TODO Add event listener to handle switching dynamically
 		if (state.get().animations === null)
 			state.set((state) => ({
