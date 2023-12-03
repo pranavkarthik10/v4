@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Icon } from '@iconify/react';
+import React, { useState, useEffect } from 'react';
 
 import { Animate, Button, Pill } from '~/components';
 import { EventType, NavigationItemType } from '~/types';
@@ -18,9 +19,9 @@ const Event = dynamic<EventProps>(
 const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
-		href: '/blog',
-		icon: <Icon className="mr-3" icon="feather:edit-3" />,
-		text: 'Blog',
+		href: '/press',
+		icon: <Icon className="mr-3" icon="feather:aperture" />,
+		text: 'Press',
 	},
 	{
 		type: NavigationItemType.LINK,
@@ -30,36 +31,59 @@ const ACTIONS: Array<NavigationItem> = [
 	},
 	{
 		type: NavigationItemType.LINK,
+		href: 'https://github.com/pranavkarthik10',
+		icon: <Icon className="mr-3" icon="feather:printer" />,
+		text: 'Resume',
+	},
+	{
+		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
+		href: 'https://github.com/pranavkarthik10',
 		icon: <Icon className="mr-3" icon="feather:github" />,
 		text: 'GitHub',
 	},
 ];
-
 export default function HomePage(): JSX.Element {
+	const options = ['builder', 'entrepreneur', 'visionary'];
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [isFirstRender, setIsFirstRender] = useState(true);
 	const today = new Date();
-	const birthday = new Date('1997-08-09');
-	const isBirthday =
-		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
+	const birthday = new Date('2005-09-10');
+	const isBirthday = today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a software engineer & games developer`;
+	const description = `Delivering experiences for mobile, web, and spatial interfaces.`;
+
+	// useEffect(() => {
+	// 	const intervalId = setInterval(() => {
+	// 		setCurrentIndex((prevIndex) => (prevIndex + 1) % options.length);
+	// 	}, 2000);
+
+	// 	return () => clearInterval(intervalId);
+	// }, [options.length]);
+
+	useEffect(() => {
+		// Set isFirstRender to false after the initial render
+		setIsFirstRender(false);
+	}, []);
 
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
-			<div className="min-h-screen flex items-center justify-center py-12">
-				<div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center">
+			<div className={`min-h-screen flex items-center justify-center py-12 ${isFirstRender ? 'animate' : ''}`}>
+				<div className={`max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center ${isFirstRender ? 'animate' : ''}`}>
 					<Animate
 						as="h1"
 						animation={{
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
+						className="text-gray-500 dark:text-white text-5xl sm:text-5xl md:text-6xl lg:text-6xl tracking-tight font-extrabold"
+					>
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
-						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
-						<Pill.Standard className="mt-4">developer</Pill.Standard>
+						I&apos;m Pranav, <br className="hidden sm:block" />a{' '}
+						<Pill.Standard className={`mt-4 ${isFirstRender ? 'animate' : ''}`}>
+							{options[currentIndex]}
+						</Pill.Standard>
 					</Animate>
 
 					<Animate
@@ -71,7 +95,8 @@ export default function HomePage(): JSX.Element {
 						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-400 sm:text-lg md:text-xl md:max-w-3xl"
 						transition={{
 							delay: 0.5,
-						}}>
+						}}
+					>
 						{description}
 					</Animate>
 
@@ -89,7 +114,8 @@ export default function HomePage(): JSX.Element {
 									key={index}
 									transition={{
 										delay: 0.1 * (index + 2) + 0.5,
-									}}>
+									}}
+								>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<span>{action.text}</span>

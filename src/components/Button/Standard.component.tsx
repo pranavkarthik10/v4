@@ -14,14 +14,14 @@ interface DefaultProps extends WithClassName, WithChildren {
 
 type StandardProps =
 	| ({
-			type: NavigationItemType.ACTION;
-			onClick: (e: MouseEvent) => void;
-	  } & DefaultProps)
+		type: NavigationItemType.ACTION;
+		onClick: (e: MouseEvent) => void;
+	} & DefaultProps)
 	| ({
-			type: NavigationItemType.LINK;
-			href: string;
-			external?: boolean;
-	  } & DefaultProps);
+		type: NavigationItemType.LINK;
+		href: string;
+		external?: boolean;
+	} & DefaultProps);
 
 const ButtonStyles =
 	'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:(bg-gray-100 bg-opacity-50 text-primary-400) dark:(bg-gray-900 hover:bg-gray-800) text-base font-bold text-primary-300 rounded-lg default-transition default-focus';
@@ -38,7 +38,7 @@ export function Standard({ children, className, icon, ...rest }: StandardProps):
 				);
 
 			return (
-				<Link href={rest.href} passHref>
+				<Link href={rest.href} passHref legacyBehavior>
 					<a {...rest} className={clsx(ButtonStyles, className)} href={rest.href}>
 						{icon && <Icon className="mr-2" icon={icon} />}
 						{children}

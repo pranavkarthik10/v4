@@ -86,7 +86,7 @@ export function Item({
 										);
 
 									return (
-										<Link href={action.href} passHref>
+										<Link href={action.href} passHref legacyBehavior>
 											<Action
 												as="a"
 												aria-label={action.label}

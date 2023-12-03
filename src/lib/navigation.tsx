@@ -15,12 +15,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Home',
 			href: '/',
 		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:edit-3',
-			text: 'Blog',
-			href: '/blog',
-		},
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:edit-3',
+		// 	text: 'Blog',
+		// 	href: '/blog',
+		// },
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:copy',
@@ -29,30 +29,44 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:clock',
-			text: 'Timeline',
-			href: '/timeline',
+			icon: 'feather:aperture',
+			text: 'Press',
+			href: '/press',
 		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:link',
-			text: 'Referrals',
-			href: '/referrals',
-		},
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:link',
+		// 	text: 'Referrals',
+		// 	href: '/referrals',
+		// },
 	],
 	[
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:twitter',
 			text: 'Twitter',
-			href: 'https://twitter.com/nurodev',
+			href: 'https://twitter.com/pranavkarthik__',
 			external: true,
 		},
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:github',
 			text: 'GitHub',
-			href: 'https://github.com/nurodev',
+			href: 'https://github.com/pranavkarthik10',
+			external: true,
+		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:linkedin',
+			text: 'LinkedIn',
+			href: 'https://linkedin.com/pranav-karthik',
+			external: true,
+		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:youtube',
+			text: 'YouTube',
+			href: 'https://www.youtube.com/c/PranavKarthik',
 			external: true,
 		},
 	],
@@ -71,15 +85,15 @@ export function useNavigation(): {
 		...staticMenuItems,
 		...(!loading && status.discord_status !== 'offline'
 			? [
-					[
-						{
-							type: NavigationItemType.LINK,
-							icon: <Status.Indicator color={color} pulse />,
-							text: 'Status',
-							href: '/status',
-						} as NavigationItem,
-					],
-			  ]
+				[
+					{
+						type: NavigationItemType.LINK,
+						icon: <Status.Indicator color={color} pulse />,
+						text: 'Status',
+						href: '/status',
+					} as NavigationItem,
+				],
+			]
 			: []),
 	];
 
