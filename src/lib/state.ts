@@ -1,5 +1,6 @@
 import { extend, hookstate, useHookstate } from '@hookstate/core';
 import { Persistence } from '@hookstate/persistence';
+import { localstored } from '@hookstate/localstored';
 import { useEffect } from 'react';
 import { useMedia } from 'react-use';
 
@@ -16,10 +17,13 @@ const DEFAULT_STATE = hookstate<Settings>({
 export const STATE_KEY = 'settings';
 
 export function usePersistantState(): State<Settings> {
-	const noMotionPreference = useMedia('(prefers-reduced-motion: no-preference)', true);
+	const noMotionPreference = useMedia('(prefers-rweduced-motion: no-preference)', true);
 
 	const persistance = Persistence(STATE_KEY);
-	const state = useHookstate<Settings>(DEFAULT_STATE);
+	const state = useHookstate<Settings>(DEFAULT_STATE,
+		localstored({
+			key: STATE_KEY
+		}));
 
 	useEffect(() => {
 		// extend(state, persistance);

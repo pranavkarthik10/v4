@@ -55,7 +55,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps): JSX.Elemen
 	}, [prefersDarkColorScheme, theme]);
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>
+		<Layout.Default seo={{ title: 'Referrals' }}>
 			<Toaster
 				toastOptions={{
 					position: 'bottom-right',
@@ -87,16 +87,16 @@ export default function ReferralsPage({ referrals }: ReferralsProps): JSX.Elemen
 										},
 										...(referral.code
 											? [
-													{
-														type: ListActionType.BUTTON,
-														icon: 'feather:hash',
-														label: 'Copy Referral Code',
-														onClick: () => {
-															writeText(referral.code);
-															toast.success('Copied referral code');
-														},
-													} as ListAction,
-											  ]
+												{
+													type: ListActionType.BUTTON,
+													icon: 'feather:hash',
+													label: 'Copy Referral Code',
+													onClick: () => {
+														writeText(referral.code);
+														toast.success('Copied referral code');
+													},
+												} as ListAction,
+											]
 											: []),
 										{
 											type: ListActionType.LINK,
