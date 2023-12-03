@@ -1,10 +1,10 @@
 {
 	"private": true,
-	"name": "nuro.dev",
+	"name": "pranavkarthik.me",
 	"version": "2.1.1",
-	"description": "Personal Website for nuro.dev",
-	"repository": "https://github.com/nurodev/nuro.dev.git",
-	"author": "nurodev <me@nuro.dev>",
+	"description": "Personal Website for pranavkarthik.me",
+	"repository": "https://github.com/pranavkarthik10/v4.git",
+	"author": "Pranav Karthik",
 	"license": "MIT",
 	"prettier": {
 		"arrowParens": "always",
