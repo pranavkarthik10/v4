@@ -31,7 +31,7 @@ const ACTIONS: Array<NavigationItem> = [
 	},
 	{
 		type: NavigationItemType.LINK,
-		href: 'https://github.com/pranavkarthik10',
+		href: 'https://read.cv/pranavkarthik',
 		icon: <Icon className="mr-3" icon="feather:printer" />,
 		text: 'Resume',
 	},
