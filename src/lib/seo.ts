@@ -14,12 +14,12 @@ export function useSeoProps(
 	return {
 		title,
 		description,
-		canonical: `https://nuro.dev/${router.asPath}`,
+		canonical: `https://www.pranavkarthik.me/${router.asPath}`,
 		openGraph: {
 			title,
 			description,
 			site_name: 'nuro',
-			url: `https://nuro.dev/${router.asPath}`,
+			url: `https://www.pranavkarthik.me/${router.asPath}`,
 			type: 'website',
 			images: [
 				{
@@ -32,8 +32,8 @@ export function useSeoProps(
 		},
 		twitter: {
 			cardType: 'summary_large_image',
-			handle: '@nurodev',
-			site: '@nurodev',
+			handle: '@pranavkarthik__',
+			site: '@pranavkarthik__',
 		},
 		...props,
 	};
