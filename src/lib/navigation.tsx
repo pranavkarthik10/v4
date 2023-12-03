@@ -59,7 +59,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			type: NavigationItemType.LINK,
 			icon: 'feather:linkedin',
 			text: 'LinkedIn',
-			href: 'https://linkedin.com/pranav-karthik',
+			href: 'https://linkedin.com/in/pranav-karthik',
 			external: true,
 		},
 		{
