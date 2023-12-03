@@ -12,7 +12,7 @@ interface ProjectProps {
 }
 
 export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
-	const { default: projects } = await import('../data/projects.json');
+	const { default: projects } = await import('../../data/projects.json');
 	// const stringifiedProjects = (projects as Array<Project>)
 	return {
 		props: {

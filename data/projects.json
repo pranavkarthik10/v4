@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Trackr - Manage Assignments",
+        "description": "Beautiful homework tracker for students with over 10k downloads",
+        "icon": "📝",
+        "url": "https://apps.apple.com/us/app/trackr-manage-assignments/id1479152010"
+    },
+    {
+        "name": "Washo",
+        "description": "Handwashing timer built during the pandemic to enforce good habits",
+        "icon": "🤝",
+        "url": "https://apps.apple.com/us/app/washo/id1521120340"
+    },
+    {
+        "name": "Manavata",
+        "description": "An app I helped build for a nonprofit organization",
+        "icon": "🕊️",
+        "url": "https://apps.apple.com/app/manavata/id1513845689"
+    },
+    {
+        "name": "exercisAR",
+        "description": "My winning submission to Apple's Swift Student Challenge 2020",
+        "icon": "🧘‍♂️",
+        "url": "https://www.youtube.com/watch?v=SYeBaYsg_ZY"
+    },
+    {
+        "name": "Journey to WWDC",
+        "description": "My winning submission to Apple's Swift WWDC Scholarship 2019",
+        "icon": "🎮",
+        "url": "https://www.youtube.com/watch?v=dvN3aRJJju0"
+    },
+    {
+        "name": "Discord SwiftUI",
+        "description": "A native rewrite and redesign of Discord with SwiftUI",
+        "icon": "💬",
+        "url": "https://github.com/pranavkarthik10/DiscordSwfitUI"
+    },
+    {
+        "name": "TravoAI",
+        "description": "AI Travel planner with customization",
+        "icon": "🗺️"
+    },
+    {
+        "name": "ChemKit",
+        "description": "Chemistry Labs in Augmented Reality",
+        "icon": "🧪"
+    },
+    {
+        "name": "destroyNegativity",
+        "description": "AR game to build mental health and performs sentiment analysis",
+        "icon": "🧠"
+    }
+]

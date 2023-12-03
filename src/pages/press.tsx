@@ -13,7 +13,7 @@ interface TimelineProps {
 }
 
 export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
-    const { default: rawTimeline } = await import('../data/timeline.json');
+    const { default: rawTimeline } = await import('../../data/timeline.json');
     const timeline = (rawTimeline as Array<TimelineEvent>).sort(
         (a, b) => +new Date(b.date) - +new Date(a.date),
     );
