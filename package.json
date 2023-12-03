@@ -30,6 +30,7 @@
 	"dependencies": {
 		"@headlessui/react": "^1.7.17",
 		"@hookstate/core": "^4.0.1",
+		"@hookstate/localstored": "^4.0.2",
 		"@hookstate/persistence": "^3.0.1",
 		"@iconify/react": "^4.1.1",
 		"@motionone/dom": "^10.16.4",
