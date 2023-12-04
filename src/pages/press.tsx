@@ -13,7 +13,179 @@ interface TimelineProps {
 }
 
 export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
-    const { default: rawTimeline } = await import('../../data/timeline.json');
+    const rawTimeline = [
+        {
+            "date": "02-18-2021",
+            "title": "OWL Connected",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://owlconnected.com/archives/interview-canadian-coding-wunderkid-pranav/"
+            }
+        },
+        {
+            "date": "06-25-2020",
+            "title": "Live TV on OMNI TV x2",
+            "icon": "feather:tv"
+        },
+        {
+            "date": "06-23-2020",
+            "title": "CTV News",
+            "icon": "feather:tv",
+            "link": {
+                "text": "View Recording",
+                "url": "https://bc.ctvnews.ca/vancouver-teen-coding-phenom-using-skills-for-good-1.4995106"
+            }
+        },
+        {
+            "date": "06-23-2020",
+            "title": "DailyHive: Venture x2",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://dailyhive.com/vancouver/apple-wwdc20-conference-winners"
+            }
+        },
+        {
+            "date": "06-16-2020",
+            "title": "ViewTheVibe",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://viewthevibe.com/canadian-representation-game-strong-wwdc20s-swift-student-challenge-winners/"
+            }
+        },
+        {
+            "date": "06-16-2020",
+            "title": "DailyHive: Venture",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://dailyhive.com/vancouver/canadian-winners-apple-wwdc20-swift-student-challenge"
+            }
+        },
+        {
+            "date": "06-15-2020",
+            "title": "MobileSyrup",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://mobilesyrup.com/2020/06/15/canadian-ios-app-developers-covid-19-pandemic-ipnos-ko_op-manavata-maple/"
+            }
+        },
+        {
+            "date": "06-13-2020",
+            "title": "CityNews1130",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://vancouver.citynews.ca/2020/06/13/vancouver-teen-app/"
+            }
+        },
+        {
+            "date": "05-17-2020",
+            "title": "GetConnected",
+            "icon": "feather:headphones",
+            "link": {
+                "text": "Listen to Podcast",
+                "url": "https://getconnectedmedia.com/app-show-video-podcast-tech-hoarders-unite/"
+            }
+        },
+        {
+            "date": "05-12-2020",
+            "title": "DailyHive",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://dailyhive.com/vancouver/apple-wwdc20-student-scholarship"
+            }
+        },
+        {
+            "date": "05-04-2020",
+            "title": "Vancouver School Board",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://www.vsb.bc.ca/_ci/p/15963"
+            }
+        },
+        {
+            "date": "03-06-2020",
+            "title": "TurkishKit",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://medium.com/turkishkit/ba%C5%9Far%C4%B1-hikayesi-pranav-karthik-57539fe7be43"
+            }
+        },
+        {
+            "date": "12-27-2019",
+            "title": "GeekWire",
+            "description": "Time Management tips!",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://www.geekwire.com/2019/best-ways-manage-everyday-work-life-tips-tricks-2019-geeks-week/"
+            }
+        },
+        {
+            "date": "06-13-2019",
+            "title": "Vancouver School Board",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://www.vsb.bc.ca/_ci/p/17030"
+            }
+        },
+        {
+            "date": "06-05-2019",
+            "title": "DailyHive",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://dailyhive.com/vancouver/apple-ceo-tim-cook-shout-out-vancouver-teen"
+            }
+        },
+        {
+            "date": "06-05-2019",
+            "title": "Le Journal de Montreal",
+            "icon": "feather:send",
+            "link": {
+                "text": "View Article",
+                "url": "https://www.journaldemontreal.com/a-13-ans-ce-developpeur-canadien-attire-lattention-dapple"
+            }
+        },
+        {
+            "date": "06-05-2019",
+            "title": "Live TV on BTV",
+            "icon": "feather:tv"
+        },
+        {
+            "date": "06-05-2019",
+            "title": "Live TV on OMNI TV",
+            "icon": "feather:tv"
+        },
+        {
+            "date": "06-03-2019",
+            "title": "By Tim Cook on Twitter",
+            "description": "as part of WWDC 2019",
+            "icon": "feather:book",
+            "link": {
+                "text": "View Tweet",
+                "url": "https://twitter.com/tim_cook/status/1135700109931343872"
+            }
+        },
+        {
+            "date": "05-31-2019",
+            "title": "GeekWire",
+            "description": "Featured as Geek of the Week",
+            "icon": "feather:gift",
+            "link": {
+                "text": "Visit GeekWire",
+                "url": "https://www.geekwire.com/2019/pranav-karthik/"
+            }
+        }
+    ];
     const timeline = (rawTimeline as Array<TimelineEvent>).sort(
         (a, b) => +new Date(b.date) - +new Date(a.date),
     );
